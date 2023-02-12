@@ -36,15 +36,15 @@ export class ProductAddComponent implements OnInit {
         this.toastrService.success(response.message,"Başarılı")
       },responseError=>{
         if(responseError.error.Errors.length>0){
-          for (let i = 0; 1 <responseError.error.Errors.length; i++) {
+          for (let i = 0; i <responseError.error.Errors.length; i++) {
             this.toastrService.error(responseError.error.Errors[i].ErrorMessage
-              ,"Doğrulama Hatası")
-          }
-        }
+              ,"Doğrulama hatası")
+          }       
+        } 
       })
       
     }else{
-      this.toastrService.error("Formunuz Eksik","Dikkat!")
+      this.toastrService.error("Formunuz eksik","Dikkat")
     }
     
   }
